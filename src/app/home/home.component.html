@@ -5,9 +5,17 @@
     <br>
     <h2 *ngIf="age >= 18">Bạn quá già rồi</h2>
     <h2 *ngIf="age < 18">Bạn còn trẻ lắm</h2>
-
-    <br><br>
     <input type="text" [(ngModel)]="name">
     <h2>Chào bạn: {{name}}</h2>
     <button (click) = 'ResetName()'>Reset tên</button>
+
+    <br><br>
+
+    Nhập tuổi: <input type="text" [(ngModel)]="age">
+    {{age}}
+    <br>
+    <div *ngIf="age >=18 then gia else tre"></div>
+    <ng-template #gia>Template bạn quá già</ng-template>
+    <ng-template #tre>Template bạn khá trẻ trâu</ng-template>
+
 </div>
